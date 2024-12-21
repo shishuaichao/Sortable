@@ -2,7 +2,7 @@
 
 
 const dataList = ['娱乐', '视频', '头条', '健康', '科技', '发现', '热点', '财经', '短剧', '手机', '电影', '电脑']
-var rootDuration = 350
+var rootDuration = 300
 
 // 1. 创建dom
 const rootEl = document.querySelector('.list')
@@ -40,7 +40,7 @@ liArr.forEach(li => {
   })
   li.addEventListener("dragenter", e => {
     e.preventDefault();
-    if (e.target == dragNode) return
+    if (e.target == dragNode || e.target.isAnimate) return
     let dragNodeIndex = findCurrentIndex(dragNode);
     let targetIndex = findCurrentIndex(e.target);
     
